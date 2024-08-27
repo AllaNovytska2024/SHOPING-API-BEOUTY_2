@@ -3,15 +3,18 @@ const loader = document.querySelector("#loader");
 const form = document.querySelector("#form-items");
 const formWrapper = document.querySelector("#form-wrapper");
 
-const getProducts = value => {
+const getProducts = (value) => {
   // добавили loader
   loader.classList.toggle("loader-hide");
   // искусственно чуть замедлили появление карточек
   setTimeout(() => {
-    fetch(`https://fakestoreapi.com/products?limit=${value}`)
-      .then(res => res.json())
-      .then(data => {
-        data.map(product => {
+    fetch(`https://dummyjson.com/products?limit=${value}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const products = data.products;
+
+        console.log(products);
+        products.map((product) => {
           const card = document.createElement("div");
           card.classList.add("product-card");
           const heading = document.createElement("h4");
@@ -19,20 +22,28 @@ const getProducts = value => {
           const price = document.createElement("p");
           price.textContent = `Price: ${Math.floor(product.price)} €`;
           const img = document.createElement("img");
-          img.src = product.image;
+          img.src = product.images[0];
           img.classList.add("card-img");
-          card.append(heading, price, img);
+
+          //reviews add
+          product.reviews.map(el => {
+
+            const review = document.createElement( "p");
+            review.text
+          })
+
+          card.append(heading, price, img, reviews);
           containerProducts.append(card);
         });
         loader.classList.toggle("loader-hide");
       })
-      .catch(error => {
+      .catch((error) => {
         loader.classList.toggle("loader-hide");
 
         const serverError = document.createElement("p");
         serverError.classList.add("error-message");
         serverError.style.color = "red";
-        if (error.message === 'Failed to fetch') {
+        if (error.message === "Failed to fetch") {
           serverError.textContent = `Server error: не получилось отправить запрос 😞`;
         } else {
           serverError.textContent = `Server error: ${error.message} 😞`;
@@ -48,7 +59,7 @@ const cleanItems = () => {
   }
 };
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   const amount = e.target.amount.value;
   const error = document.querySelector(".error-message");
