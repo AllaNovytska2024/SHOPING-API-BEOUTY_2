@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d-float|font-effect-fire|fire-animation"
+    />
+    <title>SHOPING API BEOUTY-2 by Alla Novytska</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="font-effect-fire-animation">SHOPING API BEOUTY-2</h1>
+      <nav class="font-effect-fire-animation">
+        <a target="_blank" href="https:/">news</a>
+        <a href="">tickets</a>
+        <a href="">service</a>
+        <a href="">articles</a>
+        <a href="">concerts</a>
+        <a href="">culture</a>
+        <a href="">profile</a>
+        <a href="">logout</a>
+        <span class="burger-menu">☰</span>
+      </nav>
+
+      <!-- <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password (1-30):</label>
+        <input type="number" id="password" name="password" min="1" max="30" required />
+        <button class="gold-hover" type="submit">Submit</button> -->
+
+      <div class="font-effect-fire-animation side-menu side-menu-hide">
+        <a target="_blank" href="https:/">news</a>
+        <a href="">tickets</a>
+        <a href="">service</a>
+        <a href="">articles</a>
+        <a href="">concerts</a>
+        <a href="">culture</a>
+        <a href="">profile</a>
+        <a href="">logout</a>
+        <div></div>
+        <div class="welcome">
+          <div class="hello font-effect-fire-animation">
+            <p>Welcome to SHOPING</p>
+            <div class="opinion">
+              Здесь вы можете выбрать количество просматриваемых товаров. Далее
+              подтверждаете выбор через кнопку "Upload"! Далее загружается товар
+              на странице, с которым вы можете ознакомиться и добавить в
+              Корзину, через форму "Shoose a product"
+
+              <br />УДАЧНЫХ ПОКУПОК ! ЗАХОДИТЕ ЕЩЕ! ХОРОШЕГО ДНЯ!
+            </div>
+
+            <div class="form-wrapper" id="form-wrapper">
+              <form class="form-items" id="form-items">
+                <input
+                  type="text"
+                  name="amount"
+                  placeholder="type amount of items"
+                  required
+                />
+                <button type="submit">upload</button>
+              </form>
+            </div>
+          </div>
+          <div class="corg">
+            <form id="priceForm">
+              <label for="productSelect">Choose a product:</label>
+              <select id="productSelect" name="productSelect"></select>
+              <label for="quantity">Enter quantity:</label>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                required
+              />
+              <button class="Calculate gold-hover" id="submit">
+                Add to Cart
+              </button>
+            </form>
+          </div>
+
+          <div id="cartContainer">
+            <h2 class="colorFont">Cart</h2>
+            <ul class="colorFont" id="cartList"></ul>
+            <p id="totalPrice">Total Price: $0.00</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="loader" class="loader loader-hide"></div>
+
+      <div id="container-products" class="container-products"></div>
+    </main>
+    <footer>
+      <div class="span">
+        <span
+          >practice * * * @ author Alla Novytska * * * © 2024 * * * Germany all
+          right reserved</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>
